@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Juegos de loterías y apuestas deportivas en Perú - La Tinka </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./assets/favicon.ico">	
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Mottie/Keyboard/v1.27.0/dist/css/keyboard.min.css">
+			
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <header class="row bg-yellow" id="main-header">
+        
+      <section class="col-12 bg-yellow navbar bg-body-tertiary main-content container-fluid">
+
+          <div class="col-2 logo">
+              <img src="./assets/logo-tinka.svg" style="width: 190px; height: 53px;" alt="logo">
+          </div>
+
+          <div class="col-1">
+            <button type="button" class="btn bg-green position-relative">
+                <svg xmlns="http://www.w3.org/2000/svg" style="color: white;" height="20" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
+                    <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
+                </svg>
+            </button>
+          </div>                      
+          <div class="col-5" id="info-agencia">
+              <table  class="table table-borderless">
+                  <tr>
+                      <td style="padding: 5px 15px 5px 15px; border-radius: 10px; font-size: small; line-height: initial;">
+                          <table class="table table-borderless">
+                              <tr>
+                                  <td align="right">Número de agencia  :</td>
+                                  <td>00101520 - 1</td>
+                              </tr>
+                              <tr>
+                                  <td align="right">Usuario  :</td>
+                                  <td>1</td>
+                              </tr>
+                              <tr>
+                                  <td align="right">Número de version  :</td>
+                                  <td>00091</td>
+                              </tr>
+                              <tr>
+                                  <td align="right">Modo de terminal  :</td>
+                                  <td>Terminal normal</td>
+                              </tr>
+                              <tr>
+                                  <td colspan="2" align="center"><span id="actualDate"></span></td>
+                              </tr>
+                          </table>
+                      </td>
+                  </tr>
+              </table>                  
+          </div>
+
+          <div class="col-1">
+            <a href="./mensajeria.html">
+                <button type="button" class="btn bg-green position-relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" style="color: white;" height="20" fill="currentColor" class="bi bi-envelope-open" viewBox="0 0 16 16">
+                        <path d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.817l5.75 3.45L8 8.917l1.25.75L15 6.217V5.4a1 1 0 0 0-.53-.882l-6-3.2ZM15 7.383l-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734ZM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2Z"/>
+                    </svg>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      99+
+                      <span class="visually-hidden">unread messages</span>
+                  </span>
+                </button>
+            </a>
+            
+          </div>
+
+          <div class="col-1"></div>            
+                              
+      </section>
+        
+      <section class="bg-green"><div class="main-content" style="padding-bottom:20px;"></div></section>
+
+      <section style="padding-top: 10px; padding-bottom: 0;" class="bg-yellow navbar bg-body-tertiary">
+          
+          <ul class="mn-width nav nav-tabs main-content container-fluid" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                  <button class="d-flex align-items-center nav-link active btn-lg" id="home-tab" data-bs-toggle="tab" data-bs-target="#juegos-tab-pane" type="button" role="tab" aria-controls="juegos-tab-pane" aria-selected="true">
+                      <img src="./assets/favicon.ico" alt="">
+                      Juegos
+                  </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                  <button class="d-flex align-items-center nav-link btn-lg" id="profile-tab" data-bs-toggle="tab" data-bs-target="#menu-tab-pane" type="button" role="tab" aria-controls="menu-tab-pane" aria-selected="false">
+                      <img src="https://cdn-icons-png.flaticon.com/512/11963/11963098.png" alt="">
+                      Menú de Raspes
+                  </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                  <button class="d-flex align-items-center nav-link btn-lg" id="contact-tab" data-bs-toggle="tab" data-bs-target="#informacion-tab-pane" type="button" role="tab" aria-controls="informacion-tab-pane" aria-selected="false">
+                      <img src="https://cdn-icons-png.flaticon.com/512/2274/2274794.png" alt="">
+                      Información Financiera
+                  </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a href="./index.html" style="text-decoration: none;">
+                    <button class="d-flex align-items-center nav-link btn-lg" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#terminal-tab-pane" type="button" role="tab" aria-controls="terminal-tab-pane" aria-selected="false">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1996/1996219.png" alt="">
+                        Terminal
+                    </button>
+                </a>                  
+              </li>
+          </ul>
+
+      </section>
+    
+      <section class="bg-green"><div class="main-content" style="padding-bottom:10px;"></div></section>
+
+    </header> 
+    
+	
+    <section id="teapuesto">
+        <div class="main-content">
+            <div class="main-page">
+                <div class="main-game main-teapuesto">
+                    <div class="row">
+                        <div class="col-12 col-md-12">
+                            <div class="box-main-game top-box bg-lemon-green" style="position: relative;">
+                                <div class="top-banner top-tinka">
+                                    <figure>
+                                        <img class="logo-teapuesto" src="./assets/teapuesto.png" alt="Jugar Te Apuesto">
+                                    </figure>
+                                    <div class="body-banner">
+                                        <div class="left-banner">
+                                            <div class="banner-price">
+                                                <h5><b><span id="actualDate2"></span></h5>                                            
+                                            </div>
+                                        </div>                                  
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="main-panel">
+                                <div class="main-play">
+                                    
+
+                                    <div class="body-play">                                        
+
+                                        <div class="wrapper-playing">
+                                            <div class="boxes-playing">
+                                                
+
+                                                <div class="box-playing">
+                                                    <div class="row no-gutters">   
+                                                        <div class="col">                                                            
+                                                            <div class="body-content-grid mt-3 mb-3">
+                                                                <div class="row body-game">
+                                                                    <div class="col-lg-6">
+                                                                        <table id="tableResult" class="fs-12 table table-bordered">
+                                                                            <thead>
+                                                                              <tr>
+                                                                                <th>#</th>
+                                                                                <th>Código</th>
+                                                                                <th>Descripción de la apuesta</th>
+                                                                                <th>Fac</th>
+                                                                                <th>Bloqueado</th>
+                                                                              </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                              <tr>
+                                                                                <td>1</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>2</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>3</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>4</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>5</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>6</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>7</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>8</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>9</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>10</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>11</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>12</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>13</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>14</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>
+                                                                              <tr>
+                                                                                <td>15</td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                                <td></td>
+                                                                              </tr>                                                                            
+                                                                            </tbody>
+                                                                          </table>                                          
+                                                                    </div>
+
+                                                                    <div class="col-lg-3">																	
+                                                                        <button id="pdEspecialEvt" type="button" class="pdEspEvent mb-1 fs-s btn btn-senary largest-button-row2-column2">COD. EVENTO ESPECIAL</button>
+                                                                        <div class="mb-1">
+                                                                            <button id="pdExactResult" type="button" class="pdExactResult fs-s lh-n btn btn-senary text-wrap medium-button-row2-column2">Resultado Exacto</button>
+                                                                            <button id="pdHC" type="button" class="pdHC fs-s btn btn-senary smaller-button-row2-column2">HC</button>
+                                                                            <button id="pdF" type="button" class="pdF fs-s btn btn-senary smaller-button-row2-column2">F</button>
+                                                                        </div>
+                                                                        <div class="mb-1">
+                                                                            <button type="button" class="fs-s btn btn-light disabled smaller-button-row2-column2">1t</button>
+                                                                            <button id="pi1tl" type="button" class="fs-s btn btn-senary small-button-row2-column2">L</button>
+                                                                            <button id="pi1te" type="button" class="fs-s btn btn-senary small-button-row2-column2">E</button>
+                                                                            <button id="pi1tv" type="button" class="fs-s btn btn-senary small-button-row2-column2">V</button>
+                                                                        </div>
+                                                                        <div class="mb-1">
+                                                                            <button type="button" class="fs-s btn btn-light disabled smaller-button-row2-column2">2t</button>
+                                                                            <button id="pi2tl" type="button" class="fs-s btn btn-senary small-button-row2-column2">L</button>
+                                                                            <button id="pi2te" type="button" class="fs-s btn btn-senary small-button-row2-column2">E</button>
+                                                                            <button id="pi2tv" type="button" class="fs-s btn btn-senary small-button-row2-column2">V</button>
+                                                                        </div>
+                                                                        <div class="mb-1">
+                                                                            <button id="pdNA" type="button" class="pdNA fs-s btn btn-senary smaller-button-row2-column2">NA</button>
+                                                                            <button id="pd01" type="button" class="pd01 fs-s btn btn-senary small-button-row2-column2">0-1</button>
+                                                                            <button id="pd23" type="button" class="pd23 fs-s btn btn-senary small-button-row2-column2">2-3</button>
+                                                                            <button id="pd4m" type="button" class="pd4m fs-s btn btn-senary small-button-row2-column2">4+</button>
+                                                                        </div>
+                                                                        <div class="mb-1">
+                                                                            <button id="pdA" type="button" class="pdA fs-s btn btn-senary smaller-button-row2-column2">A</button>
+                                                                            <button id="pd05" type="button" class="pd05 fs-s btn btn-senary small-button-row2-column2">0.5</button>
+                                                                            <button id="pdMinus" type="button" class="pdMinus fs-s btn btn-senary small-button-row2-column2">-</button>
+                                                                            <button id="pdPlus" type="button" class="pdPlus fs-s btn btn-senary small-button-row2-column2">+</button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-3">
+                                                                        <div class="mb-1">                                                                            
+                                                                            <button id="pd1" type="button" class="pdNumber fs-s btn btn-senary-filled small-button-row2-column3">1</button>
+                                                                            <button id="pd2" type="button" class="pdNumber fs-s btn btn-senary-filled small-button-row2-column3">2</button>
+                                                                            <button id="pd3" type="button" class="pdNumber fs-s btn btn-senary-filled small-button-row2-column3">3</button>
+                                                                        </div>
+                                                                        <div class="mb-1">                                                                            
+                                                                            <button id="pd4" type="button" class="pdNumber fs-s btn btn-senary-filled small-button-row2-column3">4</button>
+                                                                            <button id="pd5" type="button" class="pdNumber fs-s btn btn-senary-filled small-button-row2-column3">5</button>
+                                                                            <button id="pd6" type="button" class="pdNumber fs-s btn btn-senary-filled small-button-row2-column3">6</button>
+                                                                        </div>
+                                                                        <div class="mb-1">                                                                            
+                                                                            <button id="pd7" type="button" class="pdNumber fs-s btn btn-senary-filled small-button-row2-column3">7</button>
+                                                                            <button id="pd8" type="button" class="pdNumber fs-s btn btn-senary-filled small-button-row2-column3">8</button>
+                                                                            <button id="pd9" type="button" class="pdNumber fs-s btn btn-senary-filled small-button-row2-column3">9</button>
+                                                                        </div>
+                                                                        <div class="mb-1">                                                                            
+                                                                            <button id="pdDelete" type="button" class="fs-s btn btn-senary-filled small-button-row2-column3"><span class="label-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"></path></svg></span></button>
+                                                                            <button id="pd0" type="button" class="pdNumber fs-s btn btn-senary-filled small-button-row2-column3">0</button>
+                                                                            <button id="pdClear" type="button" class="fs-s btn btn-senary-filled small-button-row2-column3">Borrar</button>
+                                                                        </div>
+                                                                        <div class="mb-1">                                                                            
+                                                                            <button id="pdAcept" type="button" class="pdAcept fs-s btn btn-senary-filled fs-10 large-button-row2-column3 lh-20">ACEPTAR</button>
+                                                                            <button id="pdMore"  type="button" class="pdMore fs-s btn btn-senary-filled fs-ten lh-10 large-button-row2-column3" style="padding-top:0px; padding-bottom:0px;">INGRESAR MÁS EVENTOS</button>
+                                                                        </div>
+                                                                        <div class="mb-1">                                                                            
+                                                                            <button id="multiply" type="button" class="multiply btn btn-senary-filled large-button-row2-column3 lh-20" style="font-size: xx-small;">MULTIPLICADOR</button>
+                                                                            <button id="combine" type="button" class="combine fs-s btn btn-senary-filled fs-10 large-button-row2-column3 lh-20">COMBINADA</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+
+                                                            <div class="body-content-grid mt-3 mb-3">
+                                                                <div class="row body-game">
+                                                                    <div class="col-lg-4">
+                                                                        <div class="mb-1 list-title">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                                                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"></path>
+                                                                            </svg>
+                                                                            EVENTOS SUGERIDOS DISPONIBLES
+                                                                        </div>
+                                                                        <div class="scrollable-container height-134px">
+                                                                            <table class="table fs-12 table-bordered">
+                                                                                <thead>
+                                                                                  <tr>
+                                                                                    <th>#</th>
+                                                                                    <th>Código</th>
+                                                                                    <th>Partido</th>                                                                                
+                                                                                  </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                  <tr>
+                                                                                    <td>1</td>
+                                                                                    <td>231</td>
+                                                                                    <td>Inter M - Al-Nassr</td>                                                                                
+                                                                                  </tr>
+                                                                                  <tr>
+                                                                                    <td>2</td>
+                                                                                    <td>354</td>
+                                                                                    <td>R Madrid - A. Lima</td>                                                                                
+                                                                                  </tr>
+                                                                                  <tr>
+                                                                                    <td>3</td>
+                                                                                    <td>124</td>
+                                                                                    <td>FC Barcelona - Villareal CF</td>                                                                                
+                                                                                  </tr>
+                                                                                  <tr>
+                                                                                    <td>4</td>
+                                                                                    <td>132</td>
+                                                                                    <td>River - Boca</td>                                                                                
+                                                                                  </tr>
+                                                                                  <tr>
+                                                                                    <td>5</td>
+                                                                                    <td>512</td>
+                                                                                    <td>Real Oviedo - CD Leganes</td>                                                                                
+                                                                                  </tr>
+                                                                                  <tr>
+                                                                                    <td>6</td>
+                                                                                    <td>122</td>
+                                                                                    <td>Levante UD - CD Tenerife</td>                                                                                
+                                                                                  </tr>
+																				  <tr>
+                                                                                    <td>7</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                  </tr>
+                                                                                </tbody>
+                                                                            </table> 
+                                                                        </div>
+                                                                                                                
+                                                                    </div>
+
+                                                                    <div class="col-lg-4">
+                                                                        <div class="mb-1 list-title">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                                                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"></path>
+                                                                            </svg>
+                                                                            PAISES - CONFEDERACIÓN/LIGAS/COPAS
+                                                                        </div>
+                                                                        <div class="container no-gutter-sides">
+                                                                            <div class="scrollable-container height-134px border1pxccc">
+                                                                                <div>
+                                                                                    <button class="btn d-flex country" type="button" data-bs-toggle="collapse" data-bs-target="#españa" aria-expanded="false" aria-controls="españa">
+                                                                                        <img height="18" class="me-2" src="https://cdn-icons-png.flaticon.com/512/10601/10601048.png" alt=""> 
+                                                                                        <span>España</span>                                                                                        
+                                                                                    </button>
+                                                                                    <div class="collapse" id="españa">
+                                                                                        <div class="form-check btn liga d-flex ps-5">
+                                                                                            <input class="form-check-input me-2" type="checkbox" value="" id="españa-laliga" data-bs-toggle="collapse" data-bs-target="#laliga" aria-expanded="false" aria-controls="laliga">
+                                                                                            <label class="form-check-label" type="button" for="españa-laliga" data-bs-toggle="collapse" data-bs-target="#laliga" aria-expanded="false" aria-controls="laliga">LaLiga</label>
+                                                                                        </div>
+                                                                                        <div class="form-check btn liga d-flex ps-5">
+                                                                                            <input class="form-check-input me-2" type="checkbox" value="" id="españa-laliga2" data-bs-toggle="collapse" data-bs-target="#laliga2" aria-expanded="false" aria-controls="laliga2">
+                                                                                            <label class="form-check-label" type="button" for="españa-laliga2" data-bs-toggle="collapse" data-bs-target="#laliga2" aria-expanded="false" aria-controls="laliga">LaLiga 2</label>
+                                                                                        </div>                                                                                        
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <button class="btn d-flex country" type="button" data-bs-toggle="collapse" data-bs-target="#francia" aria-expanded="false" aria-controls="francia">
+                                                                                        <img height="18" class="me-2" src="https://cdn-icons-png.flaticon.com/128/197/197560.png" alt=""> 
+                                                                                        <span>Francia</span>                                                                                        
+                                                                                    </button>
+                                                                                    <div class="collapse" id="francia">
+                                                                                        <div class="form-check btn liga d-flex ps-5">
+                                                                                            <input class="form-check-input me-2" type="checkbox" value="" id="francia-ligue1" data-bs-toggle="collapse" data-bs-target="#ligue1" aria-expanded="false" aria-controls="ligue1">
+                                                                                            <label class="form-check-label" type="button" for="francia-ligue1" data-bs-toggle="collapse" data-bs-target="#ligue1" aria-expanded="false" aria-controls="ligue1">Ligue 1</label>
+                                                                                        </div>
+                                                                                        <div class="form-check btn liga d-flex ps-5">
+                                                                                            <input class="form-check-input me-2" type="checkbox" value="" id="francia-ligue2" data-bs-toggle="collapse" data-bs-target="#ligue2" aria-expanded="false" aria-controls="ligue2">
+                                                                                            <label class="form-check-label" type="button" for="francia-ligue2" data-bs-toggle="collapse" data-bs-target="#ligue2" aria-expanded="false" aria-controls="ligue2">Ligue 2</label>
+                                                                                        </div>                                                                                        
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <button class="btn d-flex country" type="button" data-bs-toggle="collapse" data-bs-target="#inglaterra" aria-expanded="false" aria-controls="inglaterra">
+                                                                                        <img height="18" class="me-2" src="https://cdn-icons-png.flaticon.com/128/12364/12364359.png" alt=""> 
+                                                                                        <span>Inglaterra</span>                                                                                        
+                                                                                    </button>
+                                                                                    <div class="collapse" id="inglaterra">
+                                                                                        <div class="form-check btn liga d-flex ps-5">
+                                                                                            <input class="form-check-input me-2" type="checkbox" value="" id="inglaterra-premierleague" data-bs-toggle="collapse" data-bs-target="#premierleague" aria-expanded="false" aria-controls="premierleague">
+                                                                                            <label class="form-check-label" type="button" for="inglaterra-premierleague" data-bs-toggle="collapse" data-bs-target="#premierleague" aria-expanded="false" aria-controls="premierleague">Premier League</label>
+                                                                                        </div>
+                                                                                        <div class="form-check btn liga d-flex ps-5">
+                                                                                            <input class="form-check-input me-2" type="checkbox" value="" id="inglaterra-championship" data-bs-toggle="collapse" data-bs-target="#championship" aria-expanded="false" aria-controls="championship">
+                                                                                            <label class="form-check-label" type="button" for="inglaterra-championship" data-bs-toggle="collapse" data-bs-target="#championship" aria-expanded="false" aria-controls="championship">Championship</label>
+                                                                                        </div>                                                                                                                                                                               
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div>
+                                                                                    <button class="btn d-flex country" type="button" data-bs-toggle="collapse" data-bs-target="#italia" aria-expanded="false" aria-controls="italia">
+                                                                                        <img height="18" class="me-2" src="https://cdn-icons-png.flaticon.com/128/323/323325.png" alt=""> 
+                                                                                        <span>Italia</span>                                                                                        
+                                                                                    </button>
+                                                                                    <div class="collapse" id="italia">
+                                                                                        <div class="form-check btn liga d-flex ps-5">
+                                                                                            <input class="form-check-input me-2" type="checkbox" value="" id="italia-serieA" data-bs-toggle="collapse" data-bs-target="#serieA" aria-expanded="false" aria-controls="serieA">
+                                                                                            <label class="form-check-label" type="button" for="italia-serieA" data-bs-toggle="collapse" data-bs-target="#serieA" aria-expanded="false" aria-controls="serieA">Serie A</label>
+                                                                                        </div>  
+                                                                                        <div class="form-check btn liga d-flex ps-5">
+                                                                                            <input class="form-check-input me-2" type="checkbox" value="" id="italia-serieB" data-bs-toggle="collapse" data-bs-target="#serieB" aria-expanded="false" aria-controls="serieB">
+                                                                                            <label class="form-check-label" type="button" for="italia-serieB" data-bs-toggle="collapse" data-bs-target="#serieB" aria-expanded="false" aria-controls="serieB">Serie B</label>
+                                                                                        </div>                                                                                                                                                                             
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div>
+                                                                                    <button class="btn d-flex country" type="button" data-bs-toggle="collapse" data-bs-target="#alemania" aria-expanded="false" aria-controls="alemania">
+                                                                                        <img height="18" class="me-2" src="https://cdn-icons-png.flaticon.com/128/197/197571.png" alt=""> 
+                                                                                        <span>Alemania</span>                                                                                        
+                                                                                    </button>
+                                                                                    <div class="collapse" id="alemania">                                                                                        
+                                                                                        <div class="form-check btn liga d-flex ps-5">
+                                                                                            <input class="form-check-input me-2" type="checkbox" value="" id="alemania-bundesliga" data-bs-toggle="collapse" data-bs-target="#bundesliga" aria-expanded="false" aria-controls="bundesliga">
+                                                                                            <label class="form-check-label" type="button" for="alemania-bundesliga" data-bs-toggle="collapse" data-bs-target="#bundesliga" aria-expanded="false" aria-controls="bundesliga">Bundesliga</label>
+                                                                                        </div>
+                                                                                        <div class="form-check btn liga d-flex ps-5">
+                                                                                            <input class="form-check-input me-2" type="checkbox" value="" id="alemania-2ndbundesliga" data-bs-toggle="collapse" data-bs-target="#secondbundesliga" aria-expanded="false" aria-controls="secondbundesliga">
+                                                                                            <label class="form-check-label" type="button" for="alemania-2ndbundesliga" data-bs-toggle="collapse" data-bs-target="#secondbundesliga" aria-expanded="false" aria-controls="secondbundesliga">2nd Bundesliga</label>
+                                                                                        </div>                                                                                                                                                                              
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div>
+                                                                                    <button class="btn d-flex country" type="button" data-bs-toggle="collapse" data-bs-target="#argentina" aria-expanded="false" aria-controls="argentina">
+                                                                                        <img height="18" class="me-2" src="https://cdn-icons-png.flaticon.com/128/197/197573.png" alt=""> 
+                                                                                        <span>Argentina</span>                                                                                        
+                                                                                    </button>
+                                                                                    <div class="collapse" id="argentina">
+                                                                                        <div class="form-check btn liga d-flex ps-5">
+                                                                                            <input class="form-check-input me-2" type="checkbox" value="" id="argentina-copaligaprofesional" data-bs-toggle="collapse" data-bs-target="#copaligaprofesional" aria-expanded="false" aria-controls="copaligaprofesional">
+                                                                                            <label class="form-check-label" type="button" for="argentina-copaligaprofesional" data-bs-toggle="collapse" data-bs-target="#copaligaprofesional" aria-expanded="false" aria-controls="copaligaprofesional">Copa Liga Profesional</label>
+                                                                                        </div>                                                                                                                                                                               
+                                                                                    </div>
+                                                                                </div>
+                                                                                
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-4">
+                                                                        <div class="mb-1 list-title d-flex justify-content-between">
+                                                                            <div>
+                                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                                                                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"></path>
+                                                                                </svg>
+                                                                                PARTIDOS
+                                                                            </div>
+                                                                            
+                                                                            <form class="form-inline">
+                                                                                <div id="wrap" class="input-group">                                                                                  
+                                                                                    <input id="keyboard" type="text" class="form-control search-input" placeholder="Buscar" aria-label="Buscar" aria-describedby="basic-addon1">
+                                                                                    <div class="input-group-prepend">
+                                                                                        <span class="input-group-text" id="basic-addon1">
+                                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                                                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                                                                          </svg></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                
+                                                                               
+                                                                            </form>                                                                            
+                                                                        </div>
+                                                                        <div class="container no-gutter-sides">
+                                                                            <div class="scrollable-container height-134px border1pxccc">
+                                                                                <div>
+                                                                                    <div class="collapse multi-collapse" id="laliga"> 
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">231</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">08:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Real Sociedad - Rayo Vallecano</span>                                                                                            
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">354</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">10:15</span>
+                                                                                            <span class="btn partido w-100 mbm-1">UD Las Palmas - Real Madrid CF</span>                                                                                            
+                                                                                        </div>  
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">124</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">12:30</span>
+                                                                                            <span class="btn partido w-100 mbm-1">FC Barcelona - Villareal CF</span>                                                                                            
+                                                                                        </div>                                                                                    
+                                                                                        
+                                                                                    </div>
+                                                                                    <div class="collapse multi-collapse" id="laliga2">                                                                                        
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">132</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">10:15</span>
+                                                                                            <span class="btn partido w-100 mbm-1">FC Cartagena - SD Amorebieta</span>                                                                                            
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">512</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">12:30</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Real Oviedo - CD Leganes</span>                                                                                            
+                                                                                        </div>  
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">122</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">15:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Levante UD - CD Tenerife</span>                                                                                            
+                                                                                        </div>  
+                                                                                    
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div>
+                                                                                    <div class="collapse multi-collapse" id="ligue1">
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">001</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">11:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">OGC Niza - FC Metz</span>                                                                                            
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">002</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">15:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Olimpique Marsella - AS Mónaco FC</span>                                                                                            
+                                                                                        </div>  
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">003</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">15:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">FC Nantes - RC Lens</span>                                                                                            
+                                                                                        </div>  
+                                                                                    </div>                                                                                    
+                                                                                    <div class="collapse multi-collapse" id="ligue2">
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">001</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">13:30</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Chamois Niort FC - LB Chateauroux</span>                                                                                            
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">002</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">12:30</span>
+                                                                                            <span class="btn partido w-100 mbm-1">US Orleans 45 - FC Versailles 78</span>                                                                                            
+                                                                                        </div>  
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">003</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">15:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Epinal - AS Nancy</span>                                                                                            
+                                                                                        </div>  
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div>
+                                                                                    <div class="collapse multi-collapse" id="premierleague">
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">001</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">14:30</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Nottingham Forest - Arsenal FC</span>                                                                                            
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">002</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">14:45</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Luton Town - Brighton & Hove Albion FC</span>                                                                                            
+                                                                                        </div>  
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">003</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">15:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">FC Fulham - Everton FC</span>                                                                                            
+                                                                                        </div>  
+                                                                                    </div>                                                                                    
+                                                                                    <div class="collapse multi-collapse" id="championship">
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">001</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">14:45</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Leeds United - Norwich City FC</span>                                                                                            
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">002</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">15:30</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Sunderland AFC vs Stoke City</span>                                                                                            
+                                                                                        </div>  
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">003</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">16:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Millwall FC vs Preston North End</span>                                                                                            
+                                                                                        </div>  
+                                                                                    </div>
+                                                                                </div>
+                                                                            
+                                                                                <div>
+                                                                                    <div class="collapse multi-collapse" id="serieA">
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">001</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">14:30</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Cagliari Calcio vs Torino FC</span>                                                                                            
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">002</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">14:45</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Atalanta BC vs Udinese Calcio</span>                                                                                            
+                                                                                        </div>  
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">003</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">15:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Juventus Turin vs FC Empoli</span>                                                                                            
+                                                                                        </div>  
+                                                                                    </div>                                                                                    
+                                                                                    <div class="collapse multi-collapse" id="serieB">
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">001</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">14:45</span>
+                                                                                            <span class="btn partido w-100 mbm-1">US Catanzaro 1929 vs US Palermo</span>                                                                                            
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">002</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">15:30</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Como 1907 vs Ascoli</span>                                                                                            
+                                                                                        </div>  
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">003</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">16:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">FC Sudtirol vs Cosenza Calcio</span>                                                                                            
+                                                                                        </div>  
+                                                                                    </div>
+                                                                                </div>
+                                                                                
+                                                                                <div>
+                                                                                    <div class="collapse multi-collapse" id="bundesliga">
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">001</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">14:30</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Bayern Múnich vs Union Berlin</span>                                                                                            
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">002</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">14:45</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Eintracht Frankfurt vs FSV Mainz</span>                                                                                            
+                                                                                        </div>  
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">003</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">15:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">VfL Wolfsburgo vs 1. FC Colonia</span>                                                                                            
+                                                                                        </div>  
+                                                                                    </div>                                                                                    
+                                                                                    <div class="collapse multi-collapse" id="secondbundesliga">
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">001</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">14:45</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Kaiserslautern vs Schalke 04</span>                                                                                            
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">002</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">15:30</span>
+                                                                                            <span class="btn partido w-100 mbm-1">VfL 1899 Osnabruck vs SC Paderborn</span>                                                                                            
+                                                                                        </div>  
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">003</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">16:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">FC Hansa Rostock vs SV 07 Elversberg</span>                                                                                            
+                                                                                        </div>  
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div>
+                                                                                    <div class="collapse multi-collapse" id="copaligaprofesional">
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">001</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">14:30</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Instituto AC Córdoba vs Deportivo Riestra</span>                                                                                            
+                                                                                        </div>
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">002</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">14:45</span>
+                                                                                            <span class="btn partido w-100 mbm-1">CA Tigre vs CA Sarmiento</span>                                                                                            
+                                                                                        </div>  
+                                                                                        <div class="d-flex">
+                                                                                            <span class="btn partido mr-1 mbm-1">003</span>
+                                                                                            <span class="btn partido mr-1 mbm-1">15:00</span>
+                                                                                            <span class="btn partido w-100 mbm-1">Central Córdoba vs Newells Old Boys</span>                                                                                            
+                                                                                        </div>  
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>                                                            
+                                                            
+                                                            <div class="body-content-grid mt-3 mb-3">
+                                                                <div class="row body-game">
+                                                                    <div class="col-lg-4">
+                                                                        <div class="mb-1 list-title">
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                                                                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"></path>
+                                                                            </svg>
+                                                                            DETALLE DE APUESTA
+                                                                        </div>
+                                                                        <div class="scrollable-container height-58px">
+                                                                            <table id="multiplyTableResult" class="table fs-12 table-bordered">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                    <th>#</th>
+                                                                                    <th>Monto S/</th>
+                                                                                    <th>Ganancia</th>                                                                                
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                    <td>1</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                    <td>2</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>
+																					<tr>
+                                                                                    <td>3</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>   
+																					<tr>
+                                                                                    <td>4</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>   
+																					<tr>
+                                                                                    <td>5</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>   
+																					<tr>
+                                                                                    <td>6</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>   
+																					<tr>
+                                                                                    <td>7</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>   
+																					<tr>
+                                                                                    <td>8</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>   
+																					<tr>
+                                                                                    <td>9</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>   
+																					<tr>
+                                                                                    <td>10</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>   
+																					<tr>
+                                                                                    <td>11</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>   
+																					<tr>
+                                                                                    <td>12</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>   
+																					<tr>
+                                                                                    <td>13</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>   
+																					<tr>
+                                                                                    <td>14</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>   
+																					<tr>
+                                                                                    <td>15</td>
+                                                                                    <td></td>
+                                                                                    <td></td>                                                                                
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table> 
+                                                                        </div>
+                                                                                                                       
+                                                                    </div>
+
+                                                                    <div class="col-lg-3">
+                                                                        <div class="border1pxccc px-2 mt-2" style="height: 71px; background-color: #f5f5f5;font-weight: bold;">
+                                                                            <div class="d-flex justify-content-between">
+                                                                                <span class="fs-10">COMBINADAS&nbsp;&nbsp;</span>
+                                                                                <span id="tCombinadas" class="fs-10">0</span>
+                                                                            </div>
+                                                                            <div class="d-flex justify-content-between">                                                                                
+                                                                                <span class="fs-10">MULTIPLICADOR S/&nbsp;&nbsp;</span>
+                                                                                <span id="tMultiplicador" class="fs-10">0.00</span>
+                                                                            </div>
+                                                                            <div class="d-flex justify-content-between">                                                                                
+                                                                                <span class="fs-10">APUESTAS TOTALES&nbsp;&nbsp;</span>
+                                                                                <span id="tApuestas" class="fs-10">0</span>
+                                                                            </div>
+                                                                            <div class="d-flex justify-content-between">                                                                                
+                                                                                <span class="fs-10">MONTO TOTAL S/&nbsp;&nbsp;</span>
+                                                                                <span id="tMontoTotal" class="fs-10">0.00</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-lg-5">
+                                                                        <div class="d-flex mt-3">
+                                                                            
+                                                                            <div class="col-3">                                                                                                                                                               
+                                                                                <button type="button" id="exitBtn" class="btn btn-senary bottom-button fs-s">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                                                                                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
+                                                                                        <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
+                                                                                    </svg> 
+                                                                                    Salir
+                                                                                </button>                                                                                
+                                                                            </div>
+                                                                            <div class="modal fade" id="confirmarSalidaModal" tabindex="-1" aria-labelledby="confirmarSalidaModalLabel" aria-hidden="true">
+                                                                                <div class="modal-dialog modal-dialog-centered">
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-header">
+                                                                                            <h5 class="modal-title" id="confirmarSalidaModalLabel">Información</h5>
+                                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                                        </div>
+                                                                                        <div class="modal-body">
+                                                                                            ¿Deseas salir?
+                                                                                        </div>
+                                                                                        <div class="modal-footer">
+                                                                                            <button type="button" class="btn btn-danger" id="confirmarSalida">Sí</button>
+                                                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>                                                
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>                       
+                                                                            <div class="col-3">
+                                                                                <button type="button" id="" class="btn btn-senary bottom-button fs-s">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                                                                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247m2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                                                                                      </svg>
+                                                                                    Ayuda
+                                                                                </button>
+                                                                                
+                                                                            </div>
+                                                                            <div class="col-3">
+                                                                                <button id="clearAll" type="button" class="clearAll btn btn-senary bottom-button fs-s">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                                                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+                                                                                      </svg>
+                                                                                    Limpiar
+                                                                                </button>
+                                                                            </div>
+                                                                            
+                                                                            <div class="col-3">
+                                                                                <button id="finishBtn" type="button" class="btn btn-senary bottom-button fs-s">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                                                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                                                                        <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/>
+                                                                                      </svg>
+                                                                                    Enviar
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>                                            
+                                                            </div> 
+                                                    </div>
+                                                </div>                                             
+                                            </div>
+                                        </div>
+                                    </div>                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<!-- Square Div -->
+    <div id="selectionSquare">
+		<span>Multiplicador</span>
+		<span id="multiplySelected"></span>
+	</div>
+	
+	<script src="js/date.js"></script>    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
+    <script src="https://cdn.rawgit.com/Mottie/Keyboard/v1.27.0/dist/js/jquery.keyboard.min.js"></script>
+    <script src="https://cdn.rawgit.com/Mottie/Keyboard/v1.27.0/dist/js/jquery.mousewheel.min.js"></script>
+    <script src="https://cdn.rawgit.com/Mottie/Keyboard/v1.27.0/dist/js/jquery.keyboard.extension-typing.min.js"></script>
+    <script src="js/teapuesto.js"></script>
+</body>
+</html>

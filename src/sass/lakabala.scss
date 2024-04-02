@@ -1,0 +1,41 @@
+#la-kabala .main-tinka .box-main-game {
+    background-color: $cuaternary-color;
+}
+
+#la-kabala .jugadas .current-games .boxes-current-games .box-current-game:hover a, #la-kabala .jugadas .current-games .boxes-current-games .box-current-game.game-playing a {
+    border-color: $cuaternary-color;
+    background-color: $cuaternary-color;
+    color: #fff;
+}
+
+#la-kabala .top-banner figure img, #la-kabala .top-banner figure svg {
+    height: 52px;
+}
+
+#la-kabala .top-banner figure {
+    padding: 4px 0;
+}
+
+#la-kabala .main-play .body-play .play-text {
+    background-color: $primary-color;
+}
+
+#la-kabala .button.button-yellow {
+    color: $secondary-color;
+    background-color: $cuaternary-color;
+}
+
+#la-kabala .row>* {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.la-kabala-img-menu-margin {
+    margin: 25px 0;
+}
+
+#la-kabala .footer-single-game .main-box-detail {
+    border-radius: 10px;
+    padding: 7px 12px;
+    border: 1px solid #DBDBDB;
+}

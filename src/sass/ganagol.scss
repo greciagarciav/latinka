@@ -1,0 +1,90 @@
+.ganagol-img-menu-margin {
+    margin: 43px 0;
+}
+
+#ganagol .main-ganagol .box-main-game {
+    background-color: $quinary-color;
+}
+
+#ganagol .main-ganagol .body-content-grid {
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+#ganagol .main-ganagol .body-game .checkboxes-ball {
+    text-align: center;
+}
+
+#ganagol .body-game .checkboxes-ball {
+    max-width: 22em;
+    margin: 0 auto;
+}
+
+#ganagol .main-ganagol .body-game .checkboxes-ball label {
+    width: 20%;
+    margin: 7.5px 2.5%;
+    line-height: 11px;
+}
+
+#ganagol .button-group label {
+    margin-bottom: 0;
+    outline: medium none;
+    float: left;
+    margin: 7.5px 1.60%;
+}
+
+#ganagol .body-game .checkboxes-ball label .button-group-item {
+    border: 1px solid #828282;
+    max-width: 3.75em;
+    height: 3.75em;
+    padding: 0;
+    line-height: 3.75em;
+    border-radius: 50%;
+}
+
+#ganagol .main-ganagol .body-game .checkboxes-ball label .button-group-item {
+    border-color: #d7d7d7;
+    height: 2.3em;
+    line-height: 2.3em;
+    border-radius: 0.65em;
+}
+
+#ganagol .main-ganagol .body-game .checkboxes-ball label .button-group-item .label-item {
+    color: #d7d7d7;
+    font-size: .8em;
+}
+
+.bg-clear {
+    background-color: #f8f8f8;
+}
+
+#ganagol .button.button-yellow {
+    background-color: #4bb040;
+}
+
+.main-ganagol .top-banner .body-banner .banner-price h5 {
+    color: #3c6b34;
+}
+
+.main-ganagol .body-game .checkboxes-ball label input:checked+.button-group-item {
+    border-color: #d71b22;
+    background-color: #d71b22;
+    color: #fff;
+}
+
+#ganagol .row > * {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#ganagol .footer-single-game .main-box-detail {
+    border-radius: 10px;
+    padding: 7px 12px;
+    border: 1px solid #DBDBDB;
+}
+
+
+
+#ganagol .button-group-item-number {
+    width: 8%!important;
+}

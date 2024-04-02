@@ -1,0 +1,16 @@
+{
+  "name": "latinka",
+  "version": "1.0.0",
+  "description": "Juegos de loterias y apuestas deportivas en Perú - La Tinka",
+  "scripts": {
+    "test": "test",
+    "start": "serve src/",
+    "start-sass": "concurrently \"npm:sass-watch\" \"npm:start\"",
+    "sass-build": "node-sass --output-style content src/sass/style.scss src/css/style.css",
+    "sass-watch": "node-sass --watch --output-style expanded src/sass/style.scss src/css/style.css"
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "node-sass": "^9.0.0"
+  }
+}

@@ -1,0 +1,325 @@
+.main-tinka .box-main-game {
+    background-color: $primary-color;
+}
+
+.box-main-game {
+    border-radius: 10px;
+}
+
+.box-main-game.top-box {
+    height: 60px;
+}
+
+.top-banner figure {
+    float: left;
+    width: 180px;
+    padding: 12px 0;
+}
+
+body, figure {
+    margin: 0;
+}
+
+.top-banner figure img, .top-banner figure svg {
+    display: block;
+    height: 36px;
+    margin-left: 20px;
+}
+
+.top-banner .body-banner {
+    font-family: Cocogoose, Arial, sans-serif !important;
+    margin-left: 380px;
+}
+
+.top-banner .body-banner .banner-price {
+    padding: 25px 0;
+}
+
+.main-tinka .top-banner .body-banner .banner-price h3, .main-tinka .top-banner .body-banner .banner-price h5 {
+    color: $secondary-color;
+}
+
+.top-banner .body-banner .banner-price h5 {
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.main-panel {
+    margin-top: 15px;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.main-play .body-play .play-help {
+    position: absolute;
+    right: 12px;
+    top: -160px;
+    z-index: 2;
+}
+
+.main-play .body-play {
+    position: relative;
+}
+
+.main-play .box-wrapper-game {
+    border-radius: 10px;
+    border: 1px solid #DBDBDB;
+    height: 100%;
+}
+
+.main-play .box-content-game {
+    padding: 12px 20px 15px;
+}
+
+.main-play .top-single-game {
+    border-bottom: 1px solid #DBDBDB;
+    padding-bottom: 12px;
+    height: 31px;
+}
+
+.main-play .top-single-game h3 {
+    color: $secondary-color;
+    font-family: AllerBold, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    margin: 0;
+}
+
+.main-play .top-single-game h3 span {
+    float: right;
+    line-height: 18px;
+    text-align: right;
+    color: #4D4D4D;
+    font-family: AllerRegular, Arial, sans-serif;
+    font-size: 13px;
+}
+
+.main-play .body-single-game-A, .main-play .body-single-game-B, .main-play .body-single-game-C, .main-play .body-single-game-D {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.body-game .checkboxes-ball label {
+    margin: 4px 1%;
+    width: 9.66%;
+}
+
+.button-group input {
+    display: none;
+}
+
+.body-game .checkboxes-ball label .button-group-item {
+    border: 1px solid #828282;
+    max-width: 3.75em;
+    height: 3.75em;
+    padding: 0;
+    line-height: 3.75em;
+    border-radius: 50%;
+}
+
+.button-group label .button-group-item {
+    background: white;
+    border-left: 1px solid silver;
+    border-radius: 0.65em;
+    border-right: 1px solid silver;
+    color: gray;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1;
+    padding: 0.75em 1em;
+    width: 69px;
+    text-align: center;
+    border: 1px solid #828282;
+}
+
+.button.button-no-shadow {
+    box-shadow: none;
+}
+
+.button.button-sm {
+    height: 63px;
+    line-height: 24px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+.button.button-block {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.button.button-yellow {
+    color: $secondary-color;
+    background-color: $primary-color;
+}
+
+.button {
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 18px;
+    text-transform: text-uppercase;
+    font-size: 13px;
+    border-radius: 18px;
+    -webkit-box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.3);
+    border: medium none;
+    font-family: AllerBold, Arial, sans-serif;
+    cursor: pointer;
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    font-weight: normal;
+    transition: 0.5s;
+    position: relative;
+}
+
+.main-play h5 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    line-height: 15px;
+    color: #868686;
+    font-family: AllerRegular, Arial, sans-serif;
+}
+
+.main-play .body-play .play-text {
+    display: inline-block;
+    background-color: $secondary-color;
+    color: #fff;
+    padding: 3px 12px 3px 3px;
+    height: 20px;
+    line-height: 15px;
+    border-radius: 8px;
+    font-family: OpenSansBold, Arial, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.main-play .body-play .play-text span {
+    display: inline-block;
+    background-color: #fff;
+    color: $secondary-color;
+    border-radius: 4px;
+    margin-right: 7px;
+    font-size: 10px;
+    font-family: AllerRegular, Arial, sans-serif;
+    vertical-align: top;
+    text-align: center;
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+}
+
+#la-tinka .footer-single-game .main-box-detail {
+    border-radius: 10px;
+    padding: 7px 12px;
+    border: 1px solid #DBDBDB;
+}
+
+.footer-single-game .button {
+    border-radius: 10px;
+}
+
+.button.button-lg {
+    height: 63px;
+    line-height: 48px;
+    font-size: 18px;
+}
+
+.button.button-orange {
+    color: #fff;
+    background-color: $terciary-color;
+    background-image: linear-gradient($terciary-color-2, $terciary-color);
+}
+
+.main-tinka .body-game .checkboxes-ball label input:checked+.button-group-item {
+    border-color: #d71b22;
+    background-color: #d71b22;
+    color: #fff;
+}
+
+.action-buy {
+    margin: 20px 0px;
+}
+
+.jugadas {
+    margin-bottom: 15px;
+}
+
+.jugadas .current-games .boxes-current-games .box-current-game:first-child {
+    margin-left: 0;
+}
+
+.jugadas .current-games .boxes-current-games .box-current-game {
+    float: left;
+    margin-left: 10px;
+}
+
+.jugadas .current-games .boxes-current-games .box-current-game:hover a, .jugadas .current-games .boxes-current-games .box-current-game.game-playing a {
+    color: #fff;
+    background-color: $secondary-color;
+}
+
+.jugadas .current-games .boxes-current-games .box-current-game a {
+    display: block;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #CDCDCD;
+    color: #CDCDCD;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: AllerBold, Arial, sans-serif;
+    text-align: center;
+}
+
+.jugadas h4 {
+    margin-bottom: 0px;
+}
+
+.selectBox {
+    display: flex;
+    align-items: center;
+}
+
+.box {
+    margin-right: 10px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+.form-select {
+    width: 100px;
+}
+
+#la-tinka .row>* {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.footer-single-game .col:not(:last-child) {
+    padding-right: 5px!important;
+}
+
+.tus-numeros {
+    height: 65px;
+    margin-right: 25px;
+}
+
+.jugadas .current-games .boxes-current-games.clearfix {
+    margin-top: 15px;
+}
+
+.la-tinka-img-menu-margin {
+    margin: 45px 0;
+}

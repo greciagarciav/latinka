@@ -1,0 +1,236 @@
+$primary-color: #ffe600;
+$secondary-color: #3c6b34;
+$terciary-color: #e30613;
+$terciary-color-2:#d63a43;
+$cuaternary-color: #C1CD00;
+$quinary-color: #4bb040;
+$senary-color: #f66504;
+
+
+*{
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: #fff;
+    font-family: AllerRegular, Arial, sans-serif;
+}
+
+hr {
+    border-top: 1px dashed black;
+}
+
+.bg-green {
+    background-color: $secondary-color;
+}
+
+.tc-green {
+    color: $secondary-color!important;
+}
+
+.bg-yellow {
+    background-color: $primary-color!important;
+}
+
+.main-content {
+    width: 950px;
+    margin: 0 auto;
+}
+
+.main-page {
+    padding: 15px 30px;
+    box-shadow: 12px 0 15px -4px rgba(0, 0, 0, 0.1), -12px 0 8px -4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mn-width {
+    min-width: 950px;
+}
+
+.main-content {
+    width: 950px;
+    margin: 0 auto;
+}
+
+#main-header img, button img {
+    display: block;
+    height: 20px;
+    top: 20px;
+    right: 5px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+#info-agencia .table>:not(caption)>*>* {
+    padding: 0 5px;
+    background-color: $secondary-color;
+    color: white;
+}
+
+.nav-tabs .nav-link.active {
+    color: white;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+}
+
+.nav-tabs {
+    border-color: transparent;
+    border-bottom: none;
+}
+
+.nav-link {
+    color: $secondary-color
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: $secondary-color;
+    color: white;
+}
+
+.col-6 {
+  position: relative;
+}
+
+#menu-juegos-tabs .arrow-down {
+    padding: 0;
+}
+
+#menu-juegos-tabs .arrow-down:hover {
+    background-color: $primary-color!important;
+    border: 1px solid $primary-color!important;
+}
+
+#menu-juegos-tabs .arrow-left:hover {
+    background-color: $primary-color!important;
+    border: 1px solid $primary-color!important;
+}
+
+#menu-juegos-tabs .btn:hover {
+    background-color: #fff;
+    border: 1px solid #CDCDCD;
+    color: #CDCDCD;
+}
+
+header .btn:hover {
+    background-color: $secondary-color!important;
+    border: 1px solid $secondary-color!important;
+}
+
+.card .first-img {
+    height: 15px;
+}
+
+.lh-n {
+    line-height: normal;
+}
+
+.lh-10 {
+    line-height: 10px;
+}
+
+.lh-20 {
+    line-height: 20px;
+}
+
+.fs-s {
+    font-size: small;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.fs-11 {
+    font-size: 11.5px;
+}
+
+.fs-10 {
+    font-size: 10.5px;
+}
+
+.fs-ten {
+    font-size: 10px;
+}
+
+.gutters-5 {
+   padding: 0 5px!important; 
+}
+
+.menu-juego-border {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #CDCDCD;
+    color: #CDCDCD;
+}
+
+.card-no-border {
+    border: none;
+}
+
+#resumen-compra .card-footer tr  {
+    border-style: hidden!important;
+}
+
+#resumen-compra .card-footer  .table > :not(caption) > * > * {
+    background-color: rgba(33, 37, 41, 0.03) !important;
+}
+
+.w-80 {
+    width: 75px;
+}
+
+.w-45 {
+    width: 45px;
+}
+
+.h-20px {
+    height: 20px;
+}
+
+.lh-normal {
+    line-height: normal;
+}
+
+.pl-15 {
+    padding-left: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+.toast:not(.show) {
+    display: block;
+}
+
+.toast {
+    width: 100%!important;
+}
+
+.no-btradius-left {
+    border-top-left-radius: 0;
+}
+
+.no-btlradius-right {
+    border-top-right-radius: 0;
+}
+
+@import "ganagol";
+@import "lakabala";
+@import "latinka";
+@import "principal";
+@import "login";
+@import "mensajeria";
+@import "teapuesto";
